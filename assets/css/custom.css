@@ -1,0 +1,634 @@
+:root {
+  --light: #ffffff;
+  --lightgray: #dfdfdf;
+  --gray: #9e9e9e;
+  --darkgray: #313131;
+  --dark: #242424;
+  --blurple: #6d78ef;
+  --second: #30335a;
+  --bg: #ebf0ff;
+
+}
+
+html[class~="dark"] {
+  --light: #ffffff0d;
+  --lightgray: #4c4c4c;
+  --gray: #7f7f7f;
+  --darkgray: #cfcfcf;
+  --dark: #eeeeee;
+  --blurple: #929bff;
+  --second: #464a83;
+  --bg: #373a40;
+}
+
+/* نوبار */
+
+nav {
+  justify-content: center !important;
+  gap: 1rem !important;
+}
+
+nav > * {
+  margin: 0 !important;
+}
+
+
+/* تایپوگرافی */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('/fonts/Vazirmatn.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+  body {
+    font-family: "Vazirmatn", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+
+  h2, h3, h4, h5, h6 {
+    border-bottom: none;
+    margin-top: 0.1rem !important;
+  }
+
+  p {
+    font-size: 1.1em !important;
+    line-height: 1.95rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+
+/* دکمه تغییر تم */
+  .theme-toggle{
+    background-color: var(--lightgray);
+    color: var(--dark) !important;
+  }
+
+/* جستجو */
+.search-wrapper {
+  width: 7rem;
+}
+
+/*سوشال مدیا */
+  .group1 {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 25px;
+  }
+
+  .footer-link {
+      display: inline-block;
+  }
+
+  .footer-svg {
+      opacity: 1;
+      /* filter: grayscale(100%); */
+      transition: filter 0.3s ease;
+      transition: scale .3s ease;
+      width: 1.6em;
+      height: 1.6em;
+  }
+
+  .footer-svg:hover {
+      /* filter: grayscale(0%); */
+      scale: 1.1;
+      opacity: 0.65;
+  }
+
+
+  
+/* صفحه رزومه */
+
+.main {
+  display: flex;
+  direction: rtl;
+  gap: 30px;
+  max-width: 70rem;
+  margin: auto;
+}
+
+.main > .sidebar {
+  flex-basis: 30%;
+  padding: 25px;
+  height: fit-content;
+  background-color: var(--light);
+  border-radius: 12px;
+  border: solid 1px var(--lightgray);
+}
+
+.main > .content {
+  flex-basis: 70%;
+
+}
+
+.box {
+  padding: 25px;
+  margin-bottom: 25px;
+  background-color: var(--light);
+  border-radius: 12px;
+  border: solid 1px var(--lightgray)
+
+}
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main > .sidebar {
+      width: 100%;
+    }
+  }
+
+
+
+/* آیکون باکس */
+  .icon-box {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon img{
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--bg);
+    border-radius: 15px;
+  }
+
+  .info {
+    margin-right: 10px;
+  }
+
+  .info-title {
+    font-size: 14px;
+    color: var(--gray);
+    margin: 0px !important;
+  }
+
+  .info-address {
+    font-size: 16px;
+    color: var(--darkgray);
+    margin: 0;
+    text-decoration-line: none;
+  }
+
+  /* دکمه */
+  /* توپر */
+  .button1 {
+  background-color: var(--blurple);
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration-line: none;
+  }  
+
+  .button1:hover {
+    opacity: 0.7;
+  }
+
+  .button2 {
+  background-color: var(--second);
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1em;
+  text-decoration-line: none;
+  }  
+
+  .button2:hover {
+    opacity: 0.7;
+  }  
+
+  /* تو خالی */
+  .button3 {
+      background-color: transparent;
+      color: var(--darkgray);
+      padding: 8px 15px;
+      border: 1px solid var(--darkgray);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: var(--bodyFont);
+      font-size: 0.9em;
+      } 
+  
+  .button3:hover {
+      background-color: var(--tertiary);
+      color: white;
+      border: 1px solid var(--secondary);
+      }
+
+
+
+/* تایم لاین */
+
+  .timeline {
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 25px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--bg);
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .timeline-icon {
+    background-color: var(--bg);
+    color: var(--blurple);
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: 16px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+  }
+  
+  .timeline-content {
+    background-color: #aeb1cf14;
+    border-left: solid 3px #929bff7d;
+    /* border: solid 1px var(--lightgray); */
+    padding: 15px;
+    border-radius: 8px;
+    margin-right: 60px;
+    width: 100%;
+  }
+
+  .timeline-date {
+    color: var(--blurple);
+    margin-bottom: 10px;
+  }
+
+  
+
+  /* مهارت ها */
+  .skills-section {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+  }
+
+  .skills-card {
+    border: solid 1px var(--lightgray);
+    border-radius: 10px;
+    padding: 20px;
+    flex-grow: 1;
+  }
+
+  .skills-header {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  .skills-item {
+    margin: 25px 0;
+  }
+
+  .progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+  }
+
+  .progress {
+    background-color: var(--blurple);
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .skills-item span {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .skills-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skills-card {
+      width: 100%;
+    }
+  }
+
+
+
+  /* دیدگاه کارفرمایان */
+  .testimonial-slider {
+    height: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial {
+    position: absolute;
+    width: 100%;
+    top: 10;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .testimonial.active {
+    opacity: 1;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px auto;
+  }
+
+  .job {
+    color: var(--blurple);
+    margin: 5px 0;
+  }
+
+  .comment {
+    padding: 15px;
+    color: var(--darkgray);
+    background-color: #aeb1cf14;
+    border-radius: 10px;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin: 0 4px;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: var(--blurple);
+  }
+
+
+
+  /* لوگوی کارفرمایان */
+
+.logos-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.logo-item {
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  transition: scale .3s ease;
+}
+
+.logo-item:hover {
+  filter: grayscale(0%);
+  scale: 1.05;
+  opacity: 1;
+}
+
+/* حالت موبایل */
+@media (max-width: 767px) { 
+  .logos-container {
+    overflow-x: auto;
+}
+  .logo-item {
+    flex: 0 0 50%;
+  }
+}
+
+
+
+/* جزئیات برای صفحه نمونه کار */
+
+.detail{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #dfdfdf20;
+  padding: 0 20px;
+  margin-top: 20px;
+  border: solid 1px #8080803d;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .detail {
+    flex-direction: column;
+
+  }
+}
+
+
+
+/* گالری تصاویر */
+.main-image img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  margin: 0 10px;
+}
+
+.thumbnail img {
+  width: 100px;
+  cursor: pointer;
+  aspect-ratio: 5/4;
+  object-fit: cover;
+
+}
+
+
+/* آیکون تایتل */
+
+.icon-title{
+  display: inline;
+  width: 1.6em;
+  height: 1.6em;
+  background-color: var(--bg);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+
+
+/* دیتابیس */
+
+.gallery-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery-item {
+  overflow: hidden;
+  padding: 10px;
+  background-color: #b5b5b518;
+  border: 1px solid #b5b5b526;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.gallery-item h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: var(--blurple);
+}
+
+
+.gallery-item p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+
+.label {
+  background-color: var(--lightgray);
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-weight: 250;
+}
+
+
+
+.more {
+  background-color: var(--blurple);
+  color: white !important;
+  padding: 1px 8px;
+  border-radius: 4px;
+  text-decoration-line: none;
+  font-weight: 250;
+  line-height: 3;
+  } 
+
+  .more:hover {
+    opacity: 0.7;
+  }
+
+
+
+
+
+/* استایل بخش دکمه‌های فیلتر */
+#filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+#filterButtons button {
+  background-color: var(--lightgray);
+  color: var(--darkgray);
+  border: 1px solid #b5b5b526;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#filterButtons button:hover {
+  background-color: var(--gray);
+  color: var(--dark);
+}
+
+#filterButtons button.active {
+  background-color: var(--blurple);
+  color: #fff;
+  border-color: #333;
+}
+
+#filterButtons button:focus {
+  outline: none;
+}
+
+/* استایل منوی بازشونده مرتب‌سازی */
+#sortOption, #sortOrder {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 4px;
+}
+
+
+
+/* تمپلیت تکی آیتم های کالکشن */
+
+.item-header {
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 25px;
+  border: solid 1px #d1d1d1;
+  direction: ltr;
+}
+
+.item-header P {
+  font-weight: bold;
+}
+
+.item-header P * {
+  font-weight: 350;
+}
